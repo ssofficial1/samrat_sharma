@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Samrat Photo Studio — All-in-One Editor</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="studio.css"></head>
+<body>
+<header><a href="index.html" class="logo">⚡ SAMRAT <small>STUDIO</small></a><div class="status">● LOCAL EDIT MODE</div><a href="index.html">← MAIN SITE</a></header>
+<main><div class="top"><div><p>CREATIVE LAB / ALL-IN-ONE</p><h1>EDIT <b>EVERYTHING</b></h1><span>Photos · Anime · Text · Filters · Crop · Draw · Stickers · Export</span></div>
+<button class="save" onclick="download()">↓ SAVE PNG</button></div>
+<div class="app"><aside>
+<label class="upload">＋ UPLOAD PHOTO<input id="file" type="file" accept="image/*" hidden></label>
+<div class="tabs"><button onclick="tab('effects')">EFFECTS</button><button onclick="tab('adjust')">ADJUST</button><button onclick="tab('design')">DESIGN</button></div>
+<div id="effects" class="toolset">
+<h3>ANIME PRESETS</h3><button onclick="preset('anime')">✦ Anime Glow</button><button onclick="preset('neon')">⚡ Neon Cyber</button><button onclick="preset('manga')">◈ Manga</button><button onclick="preset('dream')">☾ Dream</button>
+<h3>PHOTO FILTERS</h3><button onclick="preset('vivid')">Vivid</button><button onclick="preset('mono')">Black & White</button><button onclick="preset('night')">Night</button><button onclick="preset('warm')">Warm</button>
+</div>
+<div id="adjust" class="toolset hidden">
+<h3>LIGHT</h3><label>Brightness <input id="bright" type="range" min="20" max="180" value="100"></label><label>Contrast <input id="contrast" type="range" min="20" max="200" value="100"></label>
+<h3>COLOR</h3><label>Saturation <input id="sat" type="range" min="0" max="250" value="100"></label><label>Hue <input id="hue" type="range" min="-180" max="180" value="0"></label>
+<h3>DETAIL</h3><label>Blur <input id="blur" type="range" min="0" max="8" value="0"></label>
+</div>
+<div id="design" class="toolset hidden">
+<h3>TRANSFORM</h3><button onclick="rotate()">↻ Rotate</button><button onclick="flip()">↔ Flip</button><button onclick="crop()">▣ Crop Center</button>
+<h3>TEXT</h3><input id="text" placeholder="Type text..."><input id="size" type="range" min="15" max="100" value="42"><button onclick="addText()">＋ Add Text</button>
+<h3>STICKERS</h3><div class="stickers"><button onclick="sticker('⚡')">⚡</button><button onclick="sticker('★')">★</button><button onclick="sticker('♛')">♛</button><button onclick="sticker('☾')">☾</button><button onclick="sticker('7')">7</button></div>
+<h3>DRAW</h3><label>Brush <input id="brush" type="range" min="2" max="30" value="8"></label><button onclick="toggleDraw()">✎ Draw Mode</button><button onclick="clearDraw()">Clear Drawing</button>
+</div>
+<button class="reset" onclick="resetAll()">↺ RESET ALL</button>
+</aside>
+<section class="canvasWrap"><div id="empty"><b>UPLOAD A PHOTO</b><span>Your complete editor is ready here.</span></div><canvas id="canvas"></canvas><div class="hint">Tip: edit → design → save. Everything runs in your browser.</div></section>
+</div></main>
+<script src="studio.js"></script></body></html>
